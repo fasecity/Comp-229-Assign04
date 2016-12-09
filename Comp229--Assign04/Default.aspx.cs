@@ -11,6 +11,8 @@ namespace Comp229__Assign04
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            modelsRep.DataSource = Global.Models;
+            modelsRep.DataBind();
 
         }
     }

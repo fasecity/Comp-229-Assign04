@@ -2,6 +2,11 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../assets/wrathofkings.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:#ffffff;
+    
 }
 
 /* Wrapping element */
@@ -23,6 +28,8 @@ textarea {
 @media screen and (min-width: 768px) {
     .jumbotron {
         margin-top: 20px;
+        /*opacity:0.9;*/
+        background-color:#192758
     }
 
     .body-content {
