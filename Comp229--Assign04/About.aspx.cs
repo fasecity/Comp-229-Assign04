@@ -10,6 +10,7 @@ namespace Comp229__Assign04
     public partial class About : Page
     {
         private Model.Model _Model;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             var name = Request.QueryString["name"];
@@ -24,6 +25,9 @@ namespace Comp229__Assign04
             name_row.Visible = true;
             row1.Visible = false;
         }
+        /// <summary>
+        /// This method Binds the deserialized json to the repeater control and text labels
+        /// </summary>
         private void SetBindings()
         {
 
@@ -61,18 +65,30 @@ namespace Comp229__Assign04
             specialAbilitiesRepeater.DataBind();
 
         }
+        /// <summary>
+        /// This method updates and sends an email also takes in input to change values in the new json file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void UpdateButton_Click(object sender, EventArgs e)
 
         {
-
+            Label4.Visible = false;
             _Model.name = NameTextBox.Text;
-            var one = Global.Models;
+           
            _Model.faction = FactionTextBox.Text;
-           // var two = ;
+
+            _Model.deploymentZone = deploymentZoneTextBox.Text;
+
+
+
+
+            ////////////////////////////////
+           //updates json file
             Global.UpdateNewJsonFile();
             //emails file
             Global.EmailFile("comp229f2016@outlook.com","Mark", Global.ModelsNewJsonFilePath);
-
+            Label4.Visible = true;
         }
 
     }

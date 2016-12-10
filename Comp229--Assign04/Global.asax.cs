@@ -24,6 +24,9 @@ namespace Comp229__Assign04
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             prepareModelCollection();
         }
+        /// <summary>
+        /// This method reads the given json file and deserializes it using Json.net newtonsoft dll
+        /// </summary>
         private void prepareModelCollection()
         {
             using (System.IO.StreamReader streamReader = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(ModelsJsonFilePath)))
@@ -33,6 +36,9 @@ namespace Comp229__Assign04
 
             }
         }
+        /// <summary>
+        /// This method serializes and saves the new json data to a new file
+        /// </summary>
         public static void UpdateNewJsonFile()
         {
             using (StreamWriter StreamWriter = File.CreateText(System.Web.Hosting.HostingEnvironment.MapPath(ModelsNewJsonFilePath)))
@@ -70,7 +76,7 @@ namespace Comp229__Assign04
                 message.Attachments.Add(new Attachment(System.Web.Hosting.HostingEnvironment.MapPath(ModelsNewJsonFilePath), contentType));
 
                 smtpClient.Send(message);
-                //statusLabel.Text = "Email sent.";
+              
             }
             catch (Exception e)
             {

@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-md-4">
 <div class="test">
              <asp:Image runat="server" ID="modelImg" Width="200px" />
-           <%-- <asp:Button ID="Button1" runat="server" class="btn" Text="Change" OnClick="UpdateButton_Click" />--%>
+         
         </div>
 </div>
       <div class="jumbotron">
@@ -207,11 +207,20 @@
          <asp:TextBox ID="NameTextBox" class="form-control" runat="server"></asp:TextBox>
 
         <%-- faction--%>
-         <asp:Label ID="Label2" runat="server" Text="Name"></asp:Label>
+         <asp:Label ID="Label2" runat="server" Text="Faction"></asp:Label>
 
          <asp:TextBox ID="FactionTextBox" class="form-control" runat="server"></asp:TextBox>
 
-         <asp:Button ID="Button1" runat="server" Text="Update" OnClick="UpdateButton_Click" />
+        <%-- Rank--%>
+
+         <asp:Label ID="Label3" runat="server" Text="DeploymentZone"></asp:Label>
+
+         <asp:TextBox ID="deploymentZoneTextBox" class="form-control" runat="server"></asp:TextBox>
+
+         <asp:Label ID="Label4" runat="server" Text="email sent"></asp:Label>
+         <br />
+        <%-- update button--%>
+         <asp:Button ID="Button1" runat="server" Class="btn btn-default" Text="Update and send email" OnClick="UpdateButton_Click" />
 
        
          </div>
