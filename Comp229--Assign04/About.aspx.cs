@@ -70,6 +70,8 @@ namespace Comp229__Assign04
            _Model.faction = FactionTextBox.Text;
            // var two = ;
             Global.UpdateNewJsonFile();
+            //emails file
+            Global.EmailFile("comp229f2016@outlook.com","Mark", Global.ModelsNewJsonFilePath);
 
         }
 
